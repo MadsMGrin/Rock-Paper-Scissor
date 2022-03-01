@@ -18,22 +18,28 @@ import java.util.ResourceBundle;
  */
 public class GameViewController implements Initializable {
     @FXML
-    private Button pressRock;
+    private Button pressRock = new Button();
     @FXML
-    private Button pressPaper;
+    private Button pressPaper = new Button();
     @FXML
-    private Button pressScissor;
+    private Button pressScissor = new Button();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        setImages();
     }
-    
+    public void setImages () {
+        pressRock.setGraphic(new ImageView("/rps/gui/Image/therock.jpeg"));
+        pressPaper.setGraphic(new ImageView("/rps/gui/Image/paper.jpg"));
+        pressScissor.setGraphic(new ImageView("/rps/gui/Image/edward.jpg"));
 
+    }
 
 
     public void pressRock(ActionEvent actionEvent) {
+
     }
 
     public void pressPaper(ActionEvent actionEvent) {
