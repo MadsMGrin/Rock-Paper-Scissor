@@ -7,6 +7,7 @@ import rps.bll.game.Result;
 
 //Java imports
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Example implementation of a player.
@@ -46,10 +47,21 @@ public class Player implements IPlayer {
      */
     @Override
     public Move doMove(IGameState state) {
+        Random rand = new Random();
+        int doMove = rand.nextInt(3);
+
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
 
-        //Implement better AI here...
-        return Move.Rock;
+        if (doMove == 0){
+            return Move.Rock;
+        }
+        if (doMove == 1){
+            return Move.Paper;
+        }
+        if (doMove == 2){
+            return Move.Scissor;
+        }
+        else return Move.Rock;
     }
 }
