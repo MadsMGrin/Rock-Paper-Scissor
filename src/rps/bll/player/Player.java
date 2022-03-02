@@ -53,15 +53,29 @@ public class Player implements IPlayer {
         //Historic data to analyze and decide next move...
         ArrayList<Result> results = (ArrayList<Result>) state.getHistoricResults();
 
-        if (doMove == 0){
-            return Move.Rock;
+        if (state.getRoundNumber() <= 10) {
+            if (doMove == 0) {
+                return Move.Rock;
+            }
+            if (doMove == 1) {
+                return Move.Paper;
+            }
+            if (doMove == 2) {
+                return Move.Scissor;
+            } else return Move.Rock;
+        } else {
+            if (results.get(state.getRoundNumber() - 2).getWinnerPlayer().getPlayerType() == PlayerType.AI) {
+                if (results.get(state.getRoundNumber() - 2).getLoserMove() == Move.Rock) {
+                    return Move.Paper;
+                }
+                if (results.get(state.getRoundNumber() - 2).getLoserMove() == Move.Paper) {
+                    return Move.Scissor;
+                }
+                if (results.get(state.getRoundNumber() - 2).getLoserMove() == Move.Scissor) {
+                    return Move.Rock;
+                }
+            }
         }
-        if (doMove == 1){
-            return Move.Paper;
-        }
-        if (doMove == 2){
-            return Move.Scissor;
-        }
-        else return Move.Rock;
+        return Move.Rock;
     }
 }
