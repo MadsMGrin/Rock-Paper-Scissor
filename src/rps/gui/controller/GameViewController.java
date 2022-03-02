@@ -23,6 +23,8 @@ public class GameViewController implements Initializable {
     private Button pressPaper = new Button();
     @FXML
     private Button pressScissor = new Button();
+    @FXML
+    private ImageView humanPlayerChoose = new ImageView();
     /**
      * Initializes the controller class.
      */
@@ -39,12 +41,14 @@ public class GameViewController implements Initializable {
 
 
     public void pressRock(ActionEvent actionEvent) {
-
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/therock.jpeg"));
     }
 
     public void pressPaper(ActionEvent actionEvent) {
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/paper.jpg"));
     }
 
     public void pressScissor(ActionEvent actionEvent) {
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/edward.jpg"));
     }
 }
