@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -21,6 +22,8 @@ import rps.bll.player.*;
  * @author smsj
  */
 public class GameViewController implements Initializable {
+    @FXML
+    private ImageView botPlayerChoose;
     @FXML
     private Button pressRock = new Button();
     @FXML
@@ -48,16 +51,24 @@ public class GameViewController implements Initializable {
 
     }
 
-
-    public void pressRock(ActionEvent actionEvent) {
+    @FXML
+    private void pressRock(ActionEvent actionEvent) {
+        ge.playRound(Move.Rock);
         humanPlayerChoose.setImage(new Image("/rps/gui/Image/therock.jpeg"));
     }
-
-    public void pressPaper(ActionEvent actionEvent) {
+    @FXML
+    private void pressPaper(ActionEvent actionEvent) {
+        ge.playRound(Move.Paper);
         humanPlayerChoose.setImage(new Image("/rps/gui/Image/paper.jpg"));
     }
-
-    public void pressScissor(ActionEvent actionEvent) {
+    @FXML
+    private void pressScissor(ActionEvent actionEvent) {
+        ge.playRound(Move.Scissor);
         humanPlayerChoose.setImage(new Image("/rps/gui/Image/edward.jpg"));
+
+    }
+    @FXML
+    private void getAIMove(){
+        
     }
 }
