@@ -32,6 +32,8 @@ public class GameViewController implements Initializable {
     private IPlayer human = new Player(playerName, PlayerType.Human);
     private IPlayer bot = new Player(botName, PlayerType.AI);
     private GameManager ge = new GameManager(human, bot);
+    @FXML
+    private ImageView humanPlayerChoose = new ImageView();
     /**
      * Initializes the controller class.
      */
@@ -48,12 +50,14 @@ public class GameViewController implements Initializable {
 
 
     public void pressRock(ActionEvent actionEvent) {
-
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/therock.jpeg"));
     }
 
     public void pressPaper(ActionEvent actionEvent) {
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/paper.jpg"));
     }
 
     public void pressScissor(ActionEvent actionEvent) {
+        humanPlayerChoose.setImage(new Image("/rps/gui/Image/edward.jpg"));
     }
 }
