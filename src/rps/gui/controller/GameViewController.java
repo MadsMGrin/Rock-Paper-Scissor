@@ -8,10 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+
 import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+// Project imports
+import rps.bll.game.*;
+import rps.bll.player.*;
 /**
  *
  * @author smsj
@@ -23,6 +27,11 @@ public class GameViewController implements Initializable {
     private Button pressPaper = new Button();
     @FXML
     private Button pressScissor = new Button();
+    private String playerName;
+    private String botName;
+    private IPlayer human = new Player(playerName, PlayerType.Human);
+    private IPlayer bot = new Player(botName, PlayerType.AI);
+    private GameManager ge = new GameManager(human, bot);
     /**
      * Initializes the controller class.
      */
