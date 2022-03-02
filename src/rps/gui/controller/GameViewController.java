@@ -23,8 +23,6 @@ import rps.bll.player.*;
  */
 public class GameViewController implements Initializable {
     @FXML
-    private ImageView botPlayerChoose;
-    @FXML
     private Button pressRock = new Button();
     @FXML
     private Button pressPaper = new Button();
@@ -37,6 +35,8 @@ public class GameViewController implements Initializable {
     private GameManager ge = new GameManager(human, bot);
     @FXML
     private ImageView humanPlayerChoose = new ImageView();
+    @FXML
+    private ImageView botPlayerChoose = new ImageView();
     private String theRock = "/rps/gui/Image/therock.jpeg";
     private String paper = "/rps/gui/Image/paper.jpg";
     private String scissor = "/rps/gui/Image/edward.jpg";
@@ -72,6 +72,6 @@ public class GameViewController implements Initializable {
     }
     @FXML
     private void getAIMove(){
-
+        
     }
 }
