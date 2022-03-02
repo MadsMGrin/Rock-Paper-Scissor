@@ -34,6 +34,9 @@ public class GameViewController implements Initializable {
     private GameManager ge = new GameManager(human, bot);
     @FXML
     private ImageView humanPlayerChoose = new ImageView();
+    private String theRock = "/rps/gui/Image/therock.jpeg";
+    private String paper = "/rps/gui/Image/paper.jpg";
+    private String scissor = "/rps/gui/Image/edward.jpg";
     /**
      * Initializes the controller class.
      */
@@ -42,22 +45,22 @@ public class GameViewController implements Initializable {
         setImages();
     }
     public void setImages () {
-        pressRock.setGraphic(new ImageView("/rps/gui/Image/therock.jpeg"));
-        pressPaper.setGraphic(new ImageView("/rps/gui/Image/paper.jpg"));
-        pressScissor.setGraphic(new ImageView("/rps/gui/Image/edward.jpg"));
+        pressRock.setGraphic(new ImageView(theRock));
+        pressPaper.setGraphic(new ImageView(paper));
+        pressScissor.setGraphic(new ImageView(scissor));
 
     }
 
 
     public void pressRock(ActionEvent actionEvent) {
-        humanPlayerChoose.setImage(new Image("/rps/gui/Image/therock.jpeg"));
+        humanPlayerChoose.setImage(new Image(theRock));
     }
 
     public void pressPaper(ActionEvent actionEvent) {
-        humanPlayerChoose.setImage(new Image("/rps/gui/Image/paper.jpg"));
+        humanPlayerChoose.setImage(new Image(paper));
     }
 
     public void pressScissor(ActionEvent actionEvent) {
-        humanPlayerChoose.setImage(new Image("/rps/gui/Image/edward.jpg"));
+        humanPlayerChoose.setImage(new Image(scissor));
     }
 }
